@@ -1,4 +1,4 @@
-// validate full name 
+// validate full name
 const nameInput = $("fullName");
 const nameMsg = $("nameMsg");
 
@@ -15,7 +15,7 @@ const validateFullName = (input, validate) => {
   return check;
 };
 
-// validate email 
+// validate email
 const emailInput = $("email");
 const emailMsg = $("emailMsg");
 
@@ -33,7 +33,7 @@ const validateEmail = (input, validate) => {
   return check;
 };
 
-// validate high 
+// validate high
 const heightInput = $("height");
 const heighMsg = $("heighMsg");
 
@@ -55,7 +55,7 @@ const roundingHeighVal = (input) => {
   return (input.value = roundedVal);
 };
 
-// validate weight 
+// validate weight
 const weightInput = $("weight");
 const weightMsg = $("weightMsg");
 
@@ -104,7 +104,5 @@ const validateForm = () => {
 
     let genderRadio = document.getElementsByName("gender");
     const gender = getGenderVal(genderRadio);
-
   }
 };
-

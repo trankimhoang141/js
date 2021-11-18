@@ -20,6 +20,7 @@ const searchPerson = () => {
     });
   }
   console.log(personSearch);
+
   //reload table
   if (personSearch.length === 0) {
     $("msgSearch").innerHTML =
@@ -27,7 +28,7 @@ const searchPerson = () => {
   } else {
     $("msgSearch").innerHTML = "";
     $("tableData").remove();
-    let drawTable = createTable(personArr);
+    let drawTable = createTable(personSearch);
     $("drawTable").append(drawTable);
   }
 };

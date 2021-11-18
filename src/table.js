@@ -6,18 +6,18 @@ const getByName = (element) => {
   return document.getElementsByName(element);
 };
 
-  const headers = [
-    "stt",
-    "full name",
-    "age",
-    "email",
-    "gender",
-    "BMI",
-    "health status",
-    "actions",
-  ];
+const headers = [
+  "stt",
+  "full name",
+  "age",
+  "email",
+  "gender",
+  "BMI",
+  "health status",
+  "actions",
+];
 
-  // create table Header
+// create table Header
 const tableHeader = () => {
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
@@ -34,10 +34,10 @@ const tableHeader = () => {
 };
 
 // create table body
-const tableBody = (array) => {
+const tableBody = (personArr) => {
   const tbody = document.createElement("tbody");
 
-  array.forEach((obj, index) => {
+  personArr.forEach((obj, index) => {
     const tr = document.createElement("tr");
     tr.setAttribute("id", `row${index + 1}`);
 
@@ -57,16 +57,16 @@ const tableBody = (array) => {
       btn.setAttribute("type", "button");
 
       return btn;
-    }
+    };
 
     const editBtn = createBtn("edit");
-    editBtn.setAttribute("data-bs-toggle","modal");
-    editBtn.setAttribute("data-bs-target","#modalForm");
+    editBtn.setAttribute("data-bs-toggle", "modal");
+    editBtn.setAttribute("data-bs-target", "#modalForm");
     editBtn.setAttribute("onclick", `editRow(${index + 1})`);
 
     const deleteBtn = createBtn("delete");
-    deleteBtn.setAttribute("data-bs-toggle","modal");
-    deleteBtn.setAttribute("data-bs-target","#confirmToDel");   
+    deleteBtn.setAttribute("data-bs-toggle", "modal");
+    deleteBtn.setAttribute("data-bs-target", "#confirmToDel");
     deleteBtn.setAttribute("onclick", `confirmDelRow(${index + 1})`);
 
     //set data for cell
@@ -96,10 +96,10 @@ const tableBody = (array) => {
   return tbody;
 };
 // create Table
-const createTable = (array) => {
+const createTable = (personArr) => {
   const table = document.createElement("table");
   const creatHeader = tableHeader();
-  const creatBody = tableBody(array);
+  const creatBody = tableBody(personArr);
 
   table.append(creatHeader);
   table.append(creatBody);
@@ -111,7 +111,4 @@ const createTable = (array) => {
 };
 
 const drawTable = createTable(personArr);
-  $("drawTable").append(drawTable);
-
-
-
+$("drawTable").append(drawTable);

@@ -1,7 +1,7 @@
 // function delete Row
 const confirmDelRow = (index) => {
   // listener Event when click button Yes
-  $("agreeToDel").setAttribute("onclick", `del(${index})`);
+  $("confirmedDel").setAttribute("onclick", `del(${index})`);
 };
 
 const del = (index) => {
